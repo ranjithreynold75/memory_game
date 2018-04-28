@@ -13,7 +13,7 @@
  * App's JavaScript code
  */
 
-const cardList = ["fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle", "fa-bomb"];
+const cards = ["fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle", "fa-bomb"];
 let started = false;
 let openCards = [];
 let moves = 0;
@@ -109,7 +109,7 @@ function incrementMove(){
 
 // populate cards in DOM
 function populate_Cards(){
-    shuffle(cardList.concat(cardList)).forEach(create_Card);
+    shuffle(cards.concat(cards)).forEach(create_Card);
 }
 
 // game reset
@@ -134,15 +134,6 @@ function endGame(){
     clearTimeout(timerPtr);
 
     let stars = $(".fa-star").length;
-    // vex.dialog.confirm({
-    //     message: `Congrats! You won the game in ${timeCount} seconds with ${stars}/3 star rating. Do you want to play again?`,
-    //     callback: function(v){
-    //         if (v){
-    //             resetGame();
-    //         }
-    //     }
-    // });
-
     swal({
         allowEscapeKey: false,
         allowOutsideClick: false,
